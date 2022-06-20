@@ -5,11 +5,21 @@ const TodoList = ({ todos, setTodos }) => {
     e.preventDefault();
   };
 
+  const handleComplete = (todo) => {
+    setTodos(
+      todos.map((item) => {
+        if (item.id === todo.id) {
+          return { ...item, completed: !item.completed };
+        }
+        return item;
+      })
+    );
+  };
+
   const handleDelete = ({ id }) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
-  console.log(todos);
   return (
     <div>
       {todos.map((todo) => (
@@ -21,7 +31,10 @@ const TodoList = ({ todos, setTodos }) => {
             onChange={handleTask}
           />
           <div>
-            <button className='button-complete task-button'>
+            <button
+              className='button-complete task-button'
+              onClick={() => handleComplete(todo)}
+            >
               <i className='fa fa-check-circle'></i>
             </button>
             <button className='button-edit task-button'>
