@@ -38,7 +38,7 @@
   margin-right: 25px;
   outline: none;
   padding: 15px;
-  width: 260px;
+  width: 300px;
 }
 
 .button-add {
@@ -47,7 +47,7 @@
   border: 0;
   cursor: pointer;
   font-size: 26px;
-  margin-left: 15px;
+  margin-left: 30px;
   padding: 12px 12px;
   width: 70px;
 }
@@ -73,7 +73,7 @@
 }
 
 .button-complete {
-  color: #ff6c6c;
+  color: #74e39d;
   margin-right: 10px;
 }
 
@@ -83,7 +83,7 @@
 }
 
 .button-delete {
-  color: lightseagreen;
+  color: rgb(211, 54, 54);
 }
 
 .complete {
