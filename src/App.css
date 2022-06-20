@@ -38,7 +38,7 @@
   margin-right: 25px;
   outline: none;
   padding: 15px;
-  width: 300px;
+  width: 330px;
 }
 
 .button-add {
@@ -47,7 +47,7 @@
   border: 0;
   cursor: pointer;
   font-size: 26px;
-  margin-left: 30px;
+  margin-left: 15px;
   padding: 12px 12px;
   width: 70px;
 }

@@ -5,6 +5,10 @@ const TodoList = ({ todos, setTodos }) => {
     e.preventDefault();
   };
 
+  const handleDelete = ({ id }) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
   console.log(todos);
   return (
     <div>
@@ -23,7 +27,10 @@ const TodoList = ({ todos, setTodos }) => {
             <button className='button-edit task-button'>
               <i className='fa fa-edit'></i>
             </button>
-            <button className='button-delete task-button'>
+            <button
+              className='button-delete task-button'
+              onClick={() => handleDelete(todo)}
+            >
               <i className='fa fa-trash'></i>
             </button>
           </div>
