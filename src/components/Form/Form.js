@@ -1,4 +1,5 @@
 import React from 'react';
+import { nanoid } from 'nanoid';
 
 const Form = ({ task, setTask, todos, setTodos }) => {
   const handleChangeTask = (e) => {
@@ -7,6 +8,8 @@ const Form = ({ task, setTask, todos, setTodos }) => {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
+    setTodos([...todos, { id: nanoid(), title: task, completed: false }]);
+    setTask('');
   };
 
   return (
@@ -15,7 +18,7 @@ const Form = ({ task, setTask, todos, setTodos }) => {
         type='text'
         placeholder='Новая задача'
         className='task-input'
-        value={task}
+        value={task || ''}
         required
         onChange={handleChangeTask}
       />
