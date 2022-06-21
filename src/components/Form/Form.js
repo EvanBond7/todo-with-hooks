@@ -15,9 +15,9 @@ const Form = ({ task, setTask, todos, setTodos, editTodo, setEditTodo }) => {
   }, [setTask, editTodo]);
 
   const updateTodo = (title, id, completed) => {
-    const newTodo = todos.map((todo) => {
-      todo.id === id ? { title, id, completed } : todo;
-    });
+    const newTodo = todos.map((todo) =>
+      todo.id === id ? { title, id, completed } : todo
+    );
     setTodos(newTodo);
     setEditTodo('');
   };
