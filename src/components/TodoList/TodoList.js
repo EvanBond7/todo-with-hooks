@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const TodoList = ({ todos, setTodos, setEditTodo }) => {
+  const [filtered, setFiltered] = useState(todos);
+
+  useEffect(() => {
+    setFiltered(todos);
+  }, [todos]);
+
   const handleTask = (e) => {
     e.preventDefault();
   };
@@ -15,6 +21,15 @@ const TodoList = ({ todos, setTodos, setEditTodo }) => {
       })
     );
   };
+
+  const todoFilter = (status) => {
+    if (status === 'all') {
+      setFiltered(todos);
+    } else {
+      let newTodo = [...todos].filter((item) => item.completed === status);
+      setFiltered(newTodo);
+    }
+  };
   const handleEditTask = ({ id }) => {
     const findTodo = todos.find((todo) => todo.id === id);
     setEditTodo(findTodo);
@@ -26,7 +41,7 @@ const TodoList = ({ todos, setTodos, setEditTodo }) => {
 
   return (
     <div>
-      {todos.map((todo) => (
+      {filtered.map((todo) => (
         <li className='list-item' key={todo.id}>
           <input
             type='text'
@@ -56,6 +71,17 @@ const TodoList = ({ todos, setTodos, setEditTodo }) => {
           </div>
         </li>
       ))}
+      <div className='btn-group'>
+        <button className='btn-success' onClick={() => todoFilter('all')}>
+          Все
+        </button>
+        <button className='btn' onClick={() => todoFilter(true)}>
+          Выполнено
+        </button>
+        <button className='btn' onClick={() => todoFilter(false)}>
+          Не завершено
+        </button>
+      </div>
     </div>
   );
 };
