@@ -71,14 +71,14 @@ const TodoList = ({ todos, setTodos, setEditTodo }) => {
           </div>
         </li>
       ))}
-      <div className='btn-group'>
-        <button className='btn-success' onClick={() => todoFilter('all')}>
+      <div className='btns-group'>
+        <button className='btns-group__item' onClick={() => todoFilter('all')}>
           Все
         </button>
-        <button className='btn' onClick={() => todoFilter(true)}>
+        <button className='btns-group__item' onClick={() => todoFilter(true)}>
           Выполнено
         </button>
-        <button className='btn' onClick={() => todoFilter(false)}>
+        <button className='btns-group__item' onClick={() => todoFilter(false)}>
           Не завершено
         </button>
       </div>

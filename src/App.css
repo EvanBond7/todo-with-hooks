@@ -86,6 +86,26 @@
   color: rgb(211, 54, 54);
 }
 
+.btns-group {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btns-group__item {
+  background-color: #f1af71;
+  border-radius: 4px;
+  border: 1px solid #000;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 400px;
+  outline: none;
+  padding: 4px 10px;
+}
+
+.btns-group__item:hover {
+  color: rgb(81, 86, 72);
+}
+
 .complete {
   opacity: 0.6;
   text-decoration-color: #ff6c6c;
