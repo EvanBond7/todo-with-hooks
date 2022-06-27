@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { nanoid } from 'nanoid';
+import './Form.css';
 
 const Form = ({ task, setTask, todos, setTodos, editTodo, setEditTodo }) => {
   const handleChangeTask = (e) => {

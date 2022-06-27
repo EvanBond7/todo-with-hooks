@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './TodoList.css';
 
 const TodoList = ({ todos, setTodos, setEditTodo }) => {
   const [filtered, setFiltered] = useState(todos);
